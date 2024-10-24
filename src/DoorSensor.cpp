@@ -17,10 +17,22 @@ void DoorSensor::toggleStatus()
         totalOpenDoors--;
 }
 
-// Checks if the door is open (returns true if open, false if closed)
+// Accessor for door status
 bool DoorSensor::checkStatus() const
 {
     return doorOpen;
+}
+
+// Mutator to set door status
+void DoorSensor::setStatus(bool status)
+{
+    if (doorOpen != status) { // Only update if there's a change
+        doorOpen = status;
+        if (doorOpen)
+            totalOpenDoors++;
+        else
+            totalOpenDoors--;
+    }
 }
 
 // Static function to get the total number of open doors

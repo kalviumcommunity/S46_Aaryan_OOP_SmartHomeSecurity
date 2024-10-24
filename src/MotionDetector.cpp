@@ -13,10 +13,16 @@ void MotionDetector::detectMotion()
     totalMotionDetections++; // Increment on each motion detection
 }
 
-// Checks if motion was detected (returns true if yes, false otherwise)
+// Accessor for motion detection status
 bool MotionDetector::getStatus() const
 {
     return motionDetected;
+}
+
+// Mutator to set motion detection status
+void MotionDetector::setStatus(bool status)
+{
+    motionDetected = status;
 }
 
 // Resets the motion detector to "no motion detected"

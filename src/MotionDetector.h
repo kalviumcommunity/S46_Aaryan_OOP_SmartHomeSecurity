@@ -16,8 +16,11 @@ public:
     // Activates the motion detector
     void detectMotion();
 
-    // Checks if motion was detected (returns true if yes, false otherwise)
+    // Accessor for motion detection status
     bool getStatus() const;
+
+    // Mutator to set motion detection status
+    void setStatus(bool status);
 
     // Resets the motion detector to "no motion detected"
     void reset();

@@ -16,8 +16,11 @@ public:
     // Toggles the door status between open and closed
     void toggleStatus();
 
-    // Checks if the door is open (returns true if open, false if closed)
+    // Accessor for door status
     bool checkStatus() const;
+
+    // Mutator to set door status
+    void setStatus(bool status);
 
     // Static function to get the total number of open doors
     static int getTotalOpenDoors();
