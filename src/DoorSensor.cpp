@@ -6,6 +6,11 @@ int DoorSensor::totalOpenDoors = 0;
 // Constructor: initializes the door as closed
 DoorSensor::DoorSensor() : doorOpen(false) {}
 
+// Destructor
+DoorSensor::~DoorSensor() {
+    // Clean up resources if necessary
+}
+
 // Toggles the door status between open and closed
 void DoorSensor::toggleStatus()
 {

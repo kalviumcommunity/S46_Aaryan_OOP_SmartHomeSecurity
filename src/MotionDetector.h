@@ -10,8 +10,11 @@ private:     // (Access specifier - private)
     static int totalMotionDetections; // Static variable to track total motion detections
 
 public:
-    // Constructor: initializes motion to "not detected"
-    MotionDetector();
+    // Parameterized constructor: initializes motion with a given status
+    MotionDetector(bool initialStatus);
+
+    // Destructor
+    ~MotionDetector();
 
     // Activates the motion detector
     void detectMotion();
