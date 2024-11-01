@@ -1,22 +1,30 @@
-#include "MotionDetector.h"
+#include <iostream>
 
-// constructor
-MotionDetector::MotionDetector() : motionDetected(false) {}
-
-// methods with null return (void)
-void MotionDetector::detectMotion()
+// MotionDetector class: simulates a motion detection sensor
+class MotionDetector
 {
-    this->motionDetected = true; // Using this pointer
-}
+private:
+    bool motionDetected; // Tracks whether motion has been detected
 
-// methods with a return value
-bool MotionDetector::getStatus() const
-{
-    return this->motionDetected; // Using this pointer
-}
+public:
+    // Constructor: initializes motion to "not detected"
+    MotionDetector() : motionDetected(false) {}
 
-// methods with null return (void)
-void MotionDetector::reset()
-{
-    this->motionDetected = false; // Using this pointer
-}
+    // Activates the motion detector
+    void detectMotion()
+    {
+        motionDetected = true;
+    }
+
+    // Checks if motion was detected (returns true if yes, false otherwise)
+    bool getStatus() const
+    {
+        return motionDetected;
+    }
+
+    // Resets the motion detector to "no motion detected"
+    void reset()
+    {
+        motionDetected = false;
+    }
+};

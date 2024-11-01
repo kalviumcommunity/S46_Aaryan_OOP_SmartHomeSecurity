@@ -1,16 +1,24 @@
-#include "DoorSensor.h"
+#include <iostream>
 
-// constructor
-DoorSensor::DoorSensor() : doorOpen(false) {}
-
-// methods with null return (void)
-void DoorSensor::toggleStatus()
+// DoorSensor class: simulates a door sensor that tracks whether the door is open or closed
+class DoorSensor
 {
-    this->doorOpen = !this->doorOpen; // Using this pointer
-}
+private:
+    bool doorOpen; // Indicates if the door is open (true) or closed (false)
 
-// methods with a return value
-bool DoorSensor::checkStatus() const
-{
-    return this->doorOpen; // Using this pointer
-}
+public:
+    // Constructor: initializes the door as closed
+    DoorSensor() : doorOpen(false) {}
+
+    // Toggles the door status between open and closed
+    void toggleStatus()
+    {
+        doorOpen = !doorOpen;
+    }
+
+    // Checks if the door is open (returns true if open, false if closed)
+    bool checkStatus() const
+    {
+        return doorOpen;
+    }
+};
