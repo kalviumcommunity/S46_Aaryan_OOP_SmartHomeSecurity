@@ -1,30 +1,32 @@
-#include <iostream>
+#include "MotionDetector.h"
 
-// MotionDetector class: simulates a motion detection sensor
-class MotionDetector
+// Initialize the static variable
+int MotionDetector::totalMotionDetections = 0;
+
+// Constructor: initializes motion to "not detected"
+MotionDetector::MotionDetector() : motionDetected(false) {}
+
+// Activates the motion detector
+void MotionDetector::detectMotion()
 {
-private:
-    bool motionDetected; // Tracks whether motion has been detected
+    motionDetected = true;
+    totalMotionDetections++; // Increment on each motion detection
+}
 
-public:
-    // Constructor: initializes motion to "not detected"
-    MotionDetector() : motionDetected(false) {}
+// Checks if motion was detected (returns true if yes, false otherwise)
+bool MotionDetector::getStatus() const
+{
+    return motionDetected;
+}
 
-    // Activates the motion detector
-    void detectMotion()
-    {
-        motionDetected = true;
-    }
+// Resets the motion detector to "no motion detected"
+void MotionDetector::reset()
+{
+    motionDetected = false;
+}
 
-    // Checks if motion was detected (returns true if yes, false otherwise)
-    bool getStatus() const
-    {
-        return motionDetected;
-    }
-
-    // Resets the motion detector to "no motion detected"
-    void reset()
-    {
-        motionDetected = false;
-    }
-};
+// Static function to get the total number of motion detections
+int MotionDetector::getTotalMotionDetections()
+{
+    return totalMotionDetections;
+}
