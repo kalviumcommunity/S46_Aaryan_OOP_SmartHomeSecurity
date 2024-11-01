@@ -19,6 +19,7 @@ public:
     // Checks if the door is open (returns true if open, false if closed)
     bool checkStatus() const;
 
+    // Static function to get the total number of open doors
     static int getTotalOpenDoors();
 };
 

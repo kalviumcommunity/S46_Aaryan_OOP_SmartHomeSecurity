@@ -22,6 +22,7 @@ public:
     // Resets the motion detector to "no motion detected"
     void reset();
 
+    // Static function to get the total number of motion detections
     static int getTotalMotionDetections();
 };
 
