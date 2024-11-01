@@ -1,24 +1,30 @@
-#include <iostream>
+#include "DoorSensor.h"
 
-// DoorSensor class: simulates a door sensor that tracks whether the door is open or closed
-class DoorSensor
+// Initialize the static variable
+int DoorSensor::totalOpenDoors = 0;
+
+// Constructor: initializes the door as closed
+DoorSensor::DoorSensor() : doorOpen(false) {}
+
+// Toggles the door status between open and closed
+void DoorSensor::toggleStatus()
 {
-private:
-    bool doorOpen; // Indicates if the door is open (true) or closed (false)
+    doorOpen = !doorOpen;
+    // Update static variable based on the new status
+    if (doorOpen)
+        totalOpenDoors++;
+    else
+        totalOpenDoors--;
+}
 
-public:
-    // Constructor: initializes the door as closed
-    DoorSensor() : doorOpen(false) {}
+// Checks if the door is open (returns true if open, false if closed)
+bool DoorSensor::checkStatus() const
+{
+    return doorOpen;
+}
 
-    // Toggles the door status between open and closed
-    void toggleStatus()
-    {
-        doorOpen = !doorOpen;
-    }
-
-    // Checks if the door is open (returns true if open, false if closed)
-    bool checkStatus() const
-    {
-        return doorOpen;
-    }
-};
+// Static function to get the total number of open doors
+int DoorSensor::getTotalOpenDoors()
+{
+    return totalOpenDoors;
+}

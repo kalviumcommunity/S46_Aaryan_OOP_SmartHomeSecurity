@@ -1,6 +1,6 @@
 #include <iostream>
-#include "MotionDetector.cpp"
-#include "DoorSensor.cpp"
+#include "MotionDetector.h"
+#include "DoorSensor.h"
 using namespace std;
 
 // Main Class for user interaction
@@ -24,7 +24,8 @@ int main()
         cout << "3. Check Motion Detector Status\n";
         cout << "4. Check All Door Sensors Status\n";
         cout << "5. Reset Motion Detector\n";
-        cout << "6. Exit\n";
+        cout << "6. Show Total Open Doors and Motion Detections\n";
+        cout << "7. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -74,6 +75,12 @@ int main()
             break;
 
         case 6:
+            // Show total open doors and motion detections
+            cout << "Total Open Doors: " << DoorSensor::getTotalOpenDoors() << endl;
+            cout << "Total Motion Detections: " << MotionDetector::getTotalMotionDetections() << endl;
+            break;
+
+        case 7:
             // Exit the simulation
             running = false;
             cout << "Exiting simulation..." << endl;
