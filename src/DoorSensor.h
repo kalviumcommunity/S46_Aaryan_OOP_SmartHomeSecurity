@@ -13,6 +13,9 @@ public:
     // Constructor: initializes the door as closed
     DoorSensor();
 
+    // Destructor
+    ~DoorSensor();
+
     // Toggles the door status between open and closed
     void toggleStatus();
 

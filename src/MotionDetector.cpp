@@ -3,8 +3,17 @@
 // Initialize the static variable
 int MotionDetector::totalMotionDetections = 0;
 
-// Constructor: initializes motion to "not detected"
-MotionDetector::MotionDetector() : motionDetected(false) {}
+// Parameterized constructor: initializes motion with a given status
+MotionDetector::MotionDetector(bool initialStatus) : motionDetected(initialStatus) {
+    if (motionDetected) {
+        totalMotionDetections++; // Increment if motion is initially detected
+    }
+}
+
+// Destructor
+MotionDetector::~MotionDetector() {
+    // Clean up resources if necessary
+}
 
 // Activates the motion detector
 void MotionDetector::detectMotion()

@@ -8,8 +8,8 @@ int main()
 {
     const int numDoorSensors = 3; // Number of DoorSensor objects
 
-    // Dynamically allocate MotionDetector and DoorSensor objects
-    MotionDetector *motionDetector = new MotionDetector();
+    // Dynamically allocate MotionDetector with initial status as false
+    MotionDetector *motionDetector = new MotionDetector(false);
     DoorSensor *doorSensors = new DoorSensor[numDoorSensors]; // Array of DoorSensor objects
 
     int choice;
