@@ -5,7 +5,7 @@
 
 class DoorSensor
 {
-private:
+private:    //  (Access specifier - private)
     bool doorOpen; // Indicates if the door is open (true) or closed (false)
     static int totalOpenDoors; // Static variable to track total open doors
 

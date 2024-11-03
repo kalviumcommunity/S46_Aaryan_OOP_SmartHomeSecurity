@@ -5,8 +5,8 @@
 
 class MotionDetector
 {
-private:
-    bool motionDetected; // Tracks whether motion has been detected
+private:     // (Access specifier - private)
+    bool motionDetected; // Tracks whether motion has been detected    
     static int totalMotionDetections; // Static variable to track total motion detections
 
 public:
