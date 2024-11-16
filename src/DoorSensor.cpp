@@ -1,7 +1,10 @@
 #include "DoorSensor.h"
 
-// Constructor: initializes the door as closed
+// Constructor 1: initializes the door as closed (default)
 DoorSensor::DoorSensor() : doorOpen(false) {}
+
+// Constructor 2: initializes the door with a given status (open or closed)
+DoorSensor::DoorSensor(bool initialStatus) : doorOpen(initialStatus) {}
 
 // Toggles the door status between open and closed
 void DoorSensor::toggleStatus() {

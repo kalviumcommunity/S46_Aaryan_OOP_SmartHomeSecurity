@@ -9,8 +9,11 @@ private:
     bool doorOpen; // Indicates if the door is open (true) or closed (false)
 
 public:
-    // Constructor: initializes the door as closed
+    // Constructor 1: initializes the door as closed (default)
     DoorSensor();
+
+    // Constructor 2: initializes the door with a given status (open or closed)
+    DoorSensor(bool initialStatus);
 
     // Toggles the door status between open and closed
     void toggleStatus();
