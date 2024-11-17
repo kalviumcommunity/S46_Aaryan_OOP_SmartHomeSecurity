@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+// Abstract base class: Sensor
 class Sensor {
 public:
     // Method to indicate sensor activation
@@ -10,7 +11,8 @@ public:
         std::cout << "Sensor activated. Monitoring for changes..." << std::endl;
     }
 
-    virtual void reset() = 0; // Pure virtual function for derived classes to implement
+    // Pure virtual function ensures derived classes must implement reset()
+    virtual void reset() = 0; // Abstraction: enforces implementation in derived classes
 };
 
 #endif // SENSOR_H

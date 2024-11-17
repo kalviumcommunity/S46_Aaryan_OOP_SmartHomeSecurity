@@ -19,7 +19,7 @@ public:
     bool getStatus() const;
 
     // Resets the motion detector
-    void reset() override; // Override the reset method
+    void reset() override; // Override the reset method from Sensor and Alarm
 };
 
 #endif // MOTIONDETECTOR_H

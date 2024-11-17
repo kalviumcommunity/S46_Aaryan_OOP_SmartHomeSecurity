@@ -18,7 +18,8 @@ int main() {
         cout << "1. Detect Motion\n";
         cout << "2. Toggle Door Status\n";
         cout << "3. Check Status Overview\n";
-        cout << "4. Exit\n";
+        cout << "4. Reset Motion Detector\n"; // New menu option for resetting
+        cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -52,6 +53,11 @@ int main() {
                 break;
 
             case 4:
+                motionDetector.reset(); 
+                cout << "Motion Detector has been reset!" << endl;
+                break;
+
+            case 5:
                 running = false;
                 cout << "Exiting simulation." << endl;
                 break;
