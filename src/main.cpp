@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     const int numDoorSensors = 3; // Number of DoorSensor objects
     MotionDetector motionDetector(false); // Initialize MotionDetector
-    DoorSensor doorSensors[numDoorSensors]; // Array of DoorSensor objects
+    DoorSensor doorSensors[numDoorSensors]; // Array of DoorSensor objects with default constructor
 
     int choice;
     bool running = true;
@@ -43,7 +43,12 @@ int main() {
                 cout << "\n--- Status Overview ---" << endl;
                 cout << "Motion Detector Status: " 
                      << (motionDetector.getStatus() ? "Motion Detected" : "No Motion") << endl;
-                cout << "Total Open Doors: " << (doorSensors[0].checkStatus() ? "Open" : "Closed") << endl;
+
+                // Displaying the status of each Door Sensor
+                for (int i = 0; i < numDoorSensors; ++i) {
+                    cout << "Door Sensor " << i << " Status: " 
+                         << (doorSensors[i].checkStatus() ? "Open" : "Closed") << endl;
+                }
                 break;
 
             case 4:
