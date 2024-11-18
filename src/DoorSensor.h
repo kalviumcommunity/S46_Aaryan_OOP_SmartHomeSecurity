@@ -1,20 +1,16 @@
 #ifndef DOORSENSOR_H
 #define DOORSENSOR_H
 
-#include <iostream>
+#include "Sensor.h"
+#include "Alarm.h"
 
-class DoorSensor
-{
-private:    //  (Access specifier - private)
+class DoorSensor : public Sensor, public Alarm {
+private:
     bool doorOpen; // Indicates if the door is open (true) or closed (false)
-    static int totalOpenDoors; // Static variable to track total open doors
 
 public:
     // Constructor: initializes the door as closed
     DoorSensor();
-
-    // Destructor
-    ~DoorSensor();
 
     // Toggles the door status between open and closed
     void toggleStatus();
@@ -22,11 +18,8 @@ public:
     // Accessor for door status
     bool checkStatus() const;
 
-    // Mutator to set door status
-    void setStatus(bool status);
-
-    // Static function to get the total number of open doors
-    static int getTotalOpenDoors();
+    // Resets the door sensor
+    void reset() override; // Override the reset method
 };
 
 #endif // DOORSENSOR_H

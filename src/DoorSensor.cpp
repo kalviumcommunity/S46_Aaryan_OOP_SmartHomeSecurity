@@ -1,47 +1,22 @@
 #include "DoorSensor.h"
 
-// Initialize the static variable
-int DoorSensor::totalOpenDoors = 0;
-
 // Constructor: initializes the door as closed
 DoorSensor::DoorSensor() : doorOpen(false) {}
 
-// Destructor
-DoorSensor::~DoorSensor() {
-    // Clean up resources if necessary
-}
-
 // Toggles the door status between open and closed
-void DoorSensor::toggleStatus()
-{
+void DoorSensor::toggleStatus() {
     doorOpen = !doorOpen;
-    // Update static variable based on the new status
-    if (doorOpen)
-        totalOpenDoors++;
-    else
-        totalOpenDoors--;
-}
-
-// Accessor for door status
-bool DoorSensor::checkStatus() const
-{
-    return doorOpen;
-}
-
-// Mutator to set door status
-void DoorSensor::setStatus(bool status)
-{
-    if (doorOpen != status) { // Only update if there's a change
-        doorOpen = status;
-        if (doorOpen)
-            totalOpenDoors++;
-        else
-            totalOpenDoors--;
+    if (doorOpen) {
+        activateAlarm(); // Trigger alarm if door is opened
     }
 }
 
-// Static function to get the total number of open doors
-int DoorSensor::getTotalOpenDoors()
-{
-    return totalOpenDoors;
+// Accessor for door status
+bool DoorSensor::checkStatus() const {
+    return doorOpen;
+}
+
+// Resets the door sensor
+void DoorSensor::reset() {
+    doorOpen = false;
 }

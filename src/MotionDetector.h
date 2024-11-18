@@ -1,35 +1,25 @@
 #ifndef MOTIONDETECTOR_H
 #define MOTIONDETECTOR_H
 
-#include <iostream>
+#include "Sensor.h"
+#include "Alarm.h"
 
-class MotionDetector
-{
-private:     // (Access specifier - private)
+class MotionDetector : public Sensor, public Alarm {
+private:
     bool motionDetected; // Tracks whether motion has been detected    
-    static int totalMotionDetections; // Static variable to track total motion detections
 
 public:
-    // Parameterized constructor: initializes motion with a given status
+    // Constructor: initializes motion with a given status
     MotionDetector(bool initialStatus);
 
-    // Destructor
-    ~MotionDetector();
-
-    // Activates the motion detector
+    // Method to detect motion
     void detectMotion();
 
     // Accessor for motion detection status
     bool getStatus() const;
 
-    // Mutator to set motion detection status
-    void setStatus(bool status);
-
-    // Resets the motion detector to "no motion detected"
-    void reset();
-
-    // Static function to get the total number of motion detections
-    static int getTotalMotionDetections();
+    // Resets the motion detector
+    void reset() override; // Override the reset method
 };
 
 #endif // MOTIONDETECTOR_H
