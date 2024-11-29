@@ -4,6 +4,14 @@
 #include "Sensor.h"
 #include "Alarm.h"
 
+/**
+ * DoorSensor Class Represents a sensor that monitors the status of a door.
+ * Adheres to the Single Responsibility Principle (SRP) 
+ * - The responsibility of this class is to manage and monitor the status of a door
+ *   (open/closed) and trigger an alarm if necessary.
+ * - This class has no responsibilities outside its defined purpose (e.g., it does not handle
+ *   motion detection or manage system-wide alarms).
+ */
 class DoorSensor : public Sensor, public Alarm {
 private:
     bool doorOpen; // Indicates if the door is open (true) or closed (false)
