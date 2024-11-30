@@ -3,7 +3,14 @@
 
 #include <iostream>
 
-// Abstract base class: Sensor
+/**
+ * Sensor - Abstract base class for all sensors.
+ * Demonstrates the Open/Closed Principle (OCP)-
+ * - The `Sensor` class is open for extension: New types of sensors (e.g., DoorSensor, MotionDetector) 
+ *   can inherit from it and implement additional behavior or override existing functionality.
+ * - The `Sensor` class is closed for modification: The base class doesn't need to be changed when adding new sensor types.
+ */
+
 class Sensor {
 public:
     // Method to indicate sensor activation
