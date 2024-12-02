@@ -9,6 +9,12 @@ int main() {
     MotionDetector motionDetector(false); // Initialize MotionDetector
     DoorSensor doorSensors[numDoorSensors]; // Array of DoorSensor objects with default constructor
 
+    /**
+     * Demonstrates the Dependency Inversion Principle (DIP) from SOLID:
+     * - The main program depends on the abstract interface (`Sensor`) rather than concrete implementations.
+     * - High-level logic (menu and simulation) uses polymorphism to interact with sensors, 
+     *   allowing new sensor types to be added without modifying the existing code.
+     */
     int choice;
     bool running = true;
 
